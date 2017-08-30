@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Meu Curriculo</title>	
+</h:head>
+
+<h:body>
+	<p:layout fullPage="true" style=" border: none !important; ">
+		<p:layoutUnit position="north" size="50" style=" border: none; ">
+			<h:outputText value="Lennon da Cunha Palmério" />
+		</p:layoutUnit>
+		<p:layoutUnit position="south" size="100">
+			<div align="right">
+				<h:outputText value="Informações das Redes Sociais" />
+			</div>
+		</p:layoutUnit>
+		<p:layoutUnit position="west" size="300">
+
+			<h:form>
+				<p:dataList value="#{progressoVIEW.progressos}" var="prg"
+					type="definition">
+					<f:facet name="header">
+							Conhecimento
+						</f:facet>
+					 				
+						<p:panelGrid columns="2" >
+						
+							<h:outputText value="#{prg.conhecimento}" />
+							<p:rating value="#{prg.progresso}" readonly="true" />
+						
+						</p:panelGrid>
+		
+		<!-- 
+					<div align="center">
+						<h:outputText value="#{prg.conhecimento}" />
+						<p:rating value="#{prg.progresso}" readonly="true" />
+					</div>
+		-->
+
+				</p:dataList>
+			</h:form>
+
+		</p:layoutUnit>
+		<p:layoutUnit position="east" size="200">
+			<h:outputText value="E-mail e Contatos" />
+		</p:layoutUnit>
+		<p:layoutUnit position="center">
+			<h:outputText value="UM Pouco Sobre mim!" />
+		</p:layoutUnit>
+	</p:layout>
+
+</h:body>
+</html>
